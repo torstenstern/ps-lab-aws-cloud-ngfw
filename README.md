@@ -754,6 +754,24 @@ To secure the East-West traffic once again, you can update the Security Profiles
 
 <br/><br/>
 
+# Finished Lab Part 1
+
+Congratulations, you have successfully completed the first Part of the Lab. As next you have to update your Lab for Multi Availabilty Zone design
+
+<br/><br/>
+
+# Update existing VPC's
+
+in that Lab part you will update/expand the existing VPCs to a second Availability Zone
+
+<br/>
+![](https://raw.githubusercontent.com/torstenstern/ps-lab-aws-cloud-ngfw/main/pictures/Screenshot%202022-09-07%20at%2017.50.42.png)
+<br/>
+
+1. Step 1
+2. Step 2
+3. Step 3
+
 # Congratulations!!!
 
 Congratulations,  you have successfully completed this Hands ON lab. As part of this lab you went through the process to SUBSCRIBE to Palo Alto CloudNGFW Service on AWS. You familiarize yourself with ways to DEPLOY the service to protect your application on AWS. And finally, you learned how to SECURE your environment with ‘Best Practices’ security profiles from Palo Alto Networks.
