@@ -766,25 +766,25 @@ Congratulations,  you have successfully completed this Hands ON lab. As part of
 
 ## Unsubscribe from CloudNGFW Service
 
-126. Navigate to the AWS Marketplace console. You can search for ‘market’ and click on ‘AWS Marketplace Subscriptions’.
+1. Navigate to the AWS Marketplace console. You can search for ‘market’ and click on ‘AWS Marketplace Subscriptions’.
 
 ![](https://lh4.googleusercontent.com/O5hgxnAoeoECZQ08ZRhA8gMvqFo2O3tpKKJkUzoAkVKmrHpmwvI9KXMeZdpawJgbu_-fF-dx0H6iQzZ4W4JJTt9N0DO9mgPc3MeLM2QYQJlS-O_rkE1wzGvZ9gU8WfkiOnEk0OEo67i774T_6oEy10A)
 
-127. Click on ‘Cloud NGFW PAY-as…” service
+2. Click on ‘Cloud NGFW PAY-as…” service
 
 ![](https://lh3.googleusercontent.com/4aTSAiGs0nqdYUEYDuY-WaxvkjKc1xSGLsdyZpdTtdS9O6pzgbne3NUMTnlLhz7XHOcaJmOij_KlaEYbu6WaZzQI3E7aratcAcg2muuij9dGayEgCkjP7B2gvHkJL0EoiidW6-0almiUUi36PiezyQ4)
 
-128. Click on ‘Action’ at the bottom of the page and click on ‘Cancel Subscription’
+3. Click on ‘Action’ at the bottom of the page and click on ‘Cancel Subscription’
 
 ![](https://lh5.googleusercontent.com/G2u3Fh6Vcs8N3ropb_m1u5VSmqIfH-4Zc4CILY-F3R6VkwDYpXXy9SoxvA7rA8ZutG3m402tjmpp7_Ds-XCE8ktnn6xCSKryy3dKBCuP9jQKddB29op-XMJzmX7aBR_ktDLx2iDyrPJL32yLREsx1qI)
 
-129. Select the checkbox to acknowledge and click on ‘Yes, cancel subscription’ 
+4. Select the checkbox to acknowledge and click on ‘Yes, cancel subscription’ 
 
 ![](https://lh3.googleusercontent.com/IUAPi4B9B-nT9da7P3P9SnvXiW014vR7FsRuAPy-vcpsQ7amLz9kjNRAmHxioV2SVqafs-c1sdeNCj7nkSfiPiGwYIwCXKUOdI_QEHRvbnbCEi-PzreZzT3nuVaBCG5jhU2yOHCnXKFUnKSqufJai2g)
 
 ![](https://lh6.googleusercontent.com/31pCarQ0Gty06az_aEBt0adXKWOjT_yhnYR33kug07SV73bZS1zUMotlqmuwTj5Cowipi7lcoI5atCx3OfFfSGxlBPyi3JmEFALcqPYAVqrg9J72m1esBhnH8AQcfuW1DVX59VSxJBNJcJD68U9Gb40)
 
-130. You have successfully unsubscribed from the CloudNGFW service.
+5. You have successfully unsubscribed from the CloudNGFW service.
 
 <br/><br/>
 
