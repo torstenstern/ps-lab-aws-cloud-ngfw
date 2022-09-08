@@ -32,6 +32,10 @@ For this workshop we have automated the deployment of the lab environment inclu
 - Follow the Subscribe-Deploy-Secure workflow to use Cloud NGFW Service to secure AWS applications
 - Use the default best practice policy on CloudNGFW to to protect your application against Log4j attack 
 - Gain end to end visibility on your application traffic with Cloudwatch
+- Create a new Inbound VPC wiht Subnets in two different Availability Zones
+- Create and Configure one Application Loadbalancer in each subnet of the Inbound VPC
+- Update the exisiting VPC's, route tables, and Transit Gateway for Inbound/Outbound Usecase
+- Create and Configure Manually one Internet Gateway and NAT Gateway
 
 <br/><br/>
 
@@ -58,9 +62,9 @@ In this activity, we will launch the lab environment. These are the steps that w
 
 ## Start the lab
 
-1. Once you login to [paloaltonetworks.qwiklabs.com](https://paloaltonetworks.qwiklabs.com/), the Home page should display the Labs that you have access to. Identify and click on the Lab that says "_Cloud NGFW_".
+1. Once you login to [paloaltonetworks.qwiklabs.com](https://paloaltonetworks.qwiklabs.com/), the Home page should display the Labs that you have access to. Identify and click on the Lab that says "_CloudNGFW on AWS Lab - Professional Service_".
 
-![](https://lh4.googleusercontent.com/_bsbMB9jVUzncgrQkx7AR0v34dkG0p1XYiigiVaWyCp-gP-qTBzrzs41YbhN2osEtpPWW0_XwdO7Eujb6yZnBwsWbTt15yupmnunliEZotJvsK2OY-kq2vFulD-7KXCLoYq4-KDZxrtanMjyBGHATfc)
+![](https://raw.githubusercontent.com/torstenstern/ps-lab-aws-cloud-ngfw/main/pictures/qw.png)
 
 2. On the page that opens up, click on _AWS CloudNGFW_.
 
@@ -762,15 +766,48 @@ Congratulations, you have successfully completed the first Part of the Lab. As n
 
 # Update existing VPC's
 
-in that Lab part you will update/expand the existing VPCs to a second Availability Zone
+in that Lab part you will update the existing VPCs to use a second Availability Zone.
 
-<br/>
+## Design
 ![](https://raw.githubusercontent.com/torstenstern/ps-lab-aws-cloud-ngfw/main/pictures/Screenshot%202022-09-07%20at%2017.50.42.png)
+
+## Steps to do
+
+1. Create in the Attack, Vulnerable and Security VPC a new Subnet for the Workloads and the TGW
+2. Update the Transit Gateway Attachments to use the Second VPC Subnet
+3. Log into the CloudNGFW Instance and create a new CloudNGFW endpoint in the new Security subnet
+4. Update the Security VPC Route table
+
 <br/>
 
-1. Step 1
-2. Step 2
-3. Step 3
+CREATE HERE A SECRET ;) 
+
+<br/><br/>
+
+# Update Envrionment for Inbound Traffic
+
+## Design
+![](https://raw.githubusercontent.com/torstenstern/ps-lab-aws-cloud-ngfw/main/pictures/Screenshot%202022-09-07%20at%2020.10.43.png)
+
+## Steps to do
+
+1. Create new Inbound VPC and 2 Subnets (TGW and Application Load Balancer) in two seperate Availability Zones
+2. Create an Internet Gateway in the Inbound VPC and Attach it to it
+3. asdasd
+4. asdasd
+
+<br/>
+
+CREATE HERE A SECRET ;) 
+
+<br/><br/>
+
+# Optional: Update the Environment for Outbound
+
+## Overview
+Update the AWS Environment to support Outbound Traffic
+
+<br/><br/>
 
 # Congratulations!!!
 
