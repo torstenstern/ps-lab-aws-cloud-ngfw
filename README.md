@@ -910,7 +910,8 @@ Threat Log Vul App Server 2
    1. 0.0.0.0/0 -> Target Inbound IGW
    2. 10.0.0.0/8 - TGW ENI Inbound VPC
 5. Create Transit Gateway Attachment for the **qwikLABS-inbound-vpc** and add the subnets **qwikLABS-inbound-vpc-tgw-subnet-aza** and **qwikLABS-inbound-vpc-tgw-subnet-azb** to it
-6. Create Application Load Balancer and configure it.
+6. Update Transit Gatewate Route Table for the Security VPC
+7. Create Application Load Balancer and configure it.
    1. Use as Target the Instances in the Vul-App-VPC
 
 <br/>
@@ -937,10 +938,22 @@ Threat Log Vul App Server 2
 
 <br/><br/>
 
-# Optional: Update the Environment for Outbound
+# Optional: Update the Environment for Outbound - WORK IN PROGRESS
 
 ## Overview
 Update the AWS Environment to support Outbound Traffic
+
+## Steps to do
+
+1. Remove the Static route Table on the Vul-VPC and ATT-VPC to IGW and update the route table the TGW to **0.0.0.0/0**
+2. Remove the Internet Gateways on the Vul-VPC and ATT-VPC
+3. Create in the Security VPC a new Subnet for the NAT-GW
+4. Create a NAT-GW in the previous created Subnet
+5. Create a new Route Table and attach the NAT-GW Subnet to it and create the following static route
+   1. 0.0.0.0/0 Target IGW (Security VPC)
+6. Update the Security Route Table
+   1. Remove IGW entry
+   2. Create 0.0.0.0/0 Target NAT-GW
 
 <br/><br/>
 
