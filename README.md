@@ -903,19 +903,6 @@ Threat Log Vul App Server 2
 ## Steps to do
 
 1. Create new Inbound VPC and 4 Subnets (TGW and Application Load Balancer) two subnets in Availability Zone A and B
-<details>
-  <summary style="color:black">Expand For Details</summary>
-
-  VPC Dashboard
-  ![](https://raw.githubusercontent.com/torstenstern/ps-lab-aws-cloud-ngfw/main/pictures/inboundvpc.png)
-
----
-
-  VPC -> Subnets
-  ![](https://raw.githubusercontent.com/torstenstern/ps-lab-aws-cloud-ngfw/main/pictures/inboundsubnets.png)
-
-</details>
-<br/>
 
 2. Create new Internet Gateway and Attach it to the new Inbound VPC
 3. Create a route table **qwikLABS-inbound-vpc-rt**
@@ -928,6 +915,24 @@ Threat Log Vul App Server 2
 
 <br/>
 
+<details>
+  <summary style="color:black">Expand For Details</summary>
+
+  Design Overview for Single AZ
+  ![](https://raw.githubusercontent.com/torstenstern/ps-lab-aws-cloud-ngfw/main/pictures/detaileddesign.png)
+
+---
+
+  VPC Dashboard
+  ![](https://raw.githubusercontent.com/torstenstern/ps-lab-aws-cloud-ngfw/main/pictures/inboundvpc.png)
+
+---
+
+  VPC -> Subnets
+  ![](https://raw.githubusercontent.com/torstenstern/ps-lab-aws-cloud-ngfw/main/pictures/inboundsubnets.png)
+
+</details>
+<br/>
 
 
 <br/><br/>
