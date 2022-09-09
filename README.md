@@ -963,6 +963,7 @@ Update the AWS Environment to support Outbound Traffic
   Design Overview for Outbound
   ![](https://raw.githubusercontent.com/torstenstern/ps-lab-aws-cloud-ngfw/main/pictures/outbounddesign.png)
 
+</details>
 
 <br/><br/>
 
