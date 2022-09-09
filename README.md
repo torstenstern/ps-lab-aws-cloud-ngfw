@@ -955,6 +955,15 @@ Update the AWS Environment to support Outbound Traffic
    1. Remove IGW entry
    2. Create 0.0.0.0/0 Target NAT-GW
 
+<br/>
+
+<details>
+  <summary style="color:black">Expand For Details</summary>
+
+  Design Overview for Outbound
+  ![](https://raw.githubusercontent.com/torstenstern/ps-lab-aws-cloud-ngfw/main/pictures/outbounddesign.png)
+
+
 <br/><br/>
 
 # Congratulations!!!
