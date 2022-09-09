@@ -891,8 +891,6 @@ Threat Log Vul App Server 2
   VPC -> Transit Gateway - Transit gateway attachments
   You should see after the update that all 3 Attachments have now two subnets inculded
   ![](https://raw.githubusercontent.com/torstenstern/ps-lab-aws-cloud-ngfw/main/pictures/tgwattachemnts.png)
-
-  
 </details>
 
 <br/><br/>
@@ -904,14 +902,33 @@ Threat Log Vul App Server 2
 
 ## Steps to do
 
-1. Create new Inbound VPC and 2 Subnets (TGW and Application Load Balancer) in two seperate Availability Zones
-2. Create an Internet Gateway in the Inbound VPC and Attach it to it
-3. asdasd
-4. asdasd
+1. Create new Inbound VPC and 4 Subnets (TGW and Application Load Balancer) two subnets in Availability Zone A and B
+<details>
+  <summary style="color:black">Expand For Details</summary>
+
+  VPC Dashboard
+  ![](https://raw.githubusercontent.com/torstenstern/ps-lab-aws-cloud-ngfw/main/pictures/inboundvpc.png)
+
+---
+
+  VPC -> Subnets
+  ![](https://raw.githubusercontent.com/torstenstern/ps-lab-aws-cloud-ngfw/main/pictures/inboundsubnets.png)
+
+</details>
+<br/>
+
+2. Create new Internet Gateway and Attach it to the new Inbound VPC
+3. Create a route table **qwikLABS-inbound-vpc-rt**
+4. Create the following route tables.
+   1. 0.0.0.0/0 -> Target Inbound IGW
+   2. 10.0.0.0/8 - TGW ENI Inbound VPC
+5. Create Transit Gateway Attachment for the **qwikLABS-inbound-vpc** and add the subnets **qwikLABS-inbound-vpc-tgw-subnet-aza** and **qwikLABS-inbound-vpc-tgw-subnet-azb** to it
+6. Create Application Load Balancer and configure it.
+   1. Use as Target the Instances in the Vul-App-VPC
 
 <br/>
 
-CREATE HERE A SECRET ;) 
+
 
 <br/><br/>
 
