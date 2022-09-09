@@ -875,10 +875,25 @@ Threat Log Vul App Server 2
 
 
 <br/>
+<details>
+  <summary style="color:black">Expand For Details</summary>
 
-CREATE HERE A SECRET ;) 
-subnet.png
-createnewendpoint.png
+  VPC -> Subnets
+  ![](https://raw.githubusercontent.com/torstenstern/ps-lab-aws-cloud-ngfw/main/pictures/subnetsoverview.png)
+
+---
+
+  VPC -> Route tables
+  ![](https://raw.githubusercontent.com/torstenstern/ps-lab-aws-cloud-ngfw/main/pictures/routetablesoverview.png)
+
+---
+
+  VPC -> Transit Gateway - Transit gateway attachments
+  You should see after the update that all 3 Attachments have now two subnets inculded
+  ![](https://raw.githubusercontent.com/torstenstern/ps-lab-aws-cloud-ngfw/main/pictures/tgwattachemnts.png)
+
+  
+</details>
 
 <br/><br/>
 
