@@ -795,6 +795,41 @@ in that Lab part you will update the existing VPCs to use a second Availability 
 8. Verify the communication between **Vul-App-Server** and **Att-App-Server**
 9. Create in the **qwikLABS-vul-vpc** a new Instance in the subnet AZ-B
 
+## Install Vul App on Server 2
+
+Login to both the vul-app-server-asb using the downloaded PEM or PPK file. Check the example below.
+
+```
+ssh -i <qwikLABS-xxxx-xxxx.pem> ec2-user@<public-ip-vul-app-server-azb>
+```
+
+**IMPORTANT:** Note that the login username to be used is “**ec2-user**”.
+
+![](https://raw.githubusercontent.com/torstenstern/ps-lab-aws-cloud-ngfw/main/pictures/loginserver2.png)
+
+As next run the following commands
+- ```sudo yum install -y jq```
+- ```sudo yum install -y wget```
+- ```sudo yum install docker```
+
+Once the installation is completed run the following commands to run docker and install the application
+
+- ```sudo systemctl start docker```
+- ```sudo docker container run -itd --rm --name vul-app-1 -p 8080:8080 us.gcr.io/panw-gcp-team-testing/qwiklab/pcc-log4shell/l4s-demo-app:1.0```
+- ```sudo docker container list -a```
+
+You should see the following
+
+![](https://raw.githubusercontent.com/torstenstern/ps-lab-aws-cloud-ngfw/main/pictures/dockeroutputserver2.png)
+
+As next run the following commands to finalize and verify the communication to the Attacker Server
+- ```sudo docker exec vul-app-1 /bin/sh -c 'echo "10.2.1.100 att-svr" >> /etc/hosts'```
+- ```sudo docker exec vul-app-1 /bin/sh -c 'ping att-svr'```
+
+You should see the following output
+
+![](https://raw.githubusercontent.com/torstenstern/ps-lab-aws-cloud-ngfw/main/pictures/dockeroutputserververify2.png)
+
 
 ## Launch the Log4J Attack
 
