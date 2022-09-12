@@ -343,7 +343,7 @@ In this section we will first get the AWS lab environment ready. 
 
 <br/>
 
-## Subscribe to CloudNGFW
+## Subscribe to Cloud NGFW
 
 We will now subscribe to Palo Alto Networks CloudNGFW service. Please follow the instructions listed below.
 
@@ -355,8 +355,8 @@ We will now subscribe to Palo Alto Networks CloudNGFW service. Please follow the
 
 ![](https://lh4.googleusercontent.com/TvKinl1Oc5NLMTiGebxMlvNRSIxVBKG0ESZ7YzZ0DIquP5x93GvLPIEa_yKIxR5q_TOgXS4LlwgQTFjHnrC7zMXJwUFWosrwzC5vJpg-uPWgd8DQgKYfMF3NlR-b4q0NU1Hp1h34mjkVZuvUtzyKr9w)
 
-48. By default, you will land on the **Manage Subscriptions** page. Take a look at any existing subscriptions to see if the account is already subscribed to Palo Alto Networks CloudNGFW service.
-49. If you dont see any existing subscription for AWS CloudNGFW, you can skip the next 3 steps.
+48. By default, you will land on the **Manage Subscriptions** page. Take a look at any existing subscriptions to see if the account is already subscribed to Palo Alto Networks Cloud NGFW service.
+49. If you dont see any existing subscription for AWS Cloud NGFW, you can skip the next 3 steps.
 50. If you find that the account is already subscribed to Cloud NGFW, we would need to cancel the existing subscription before proceeding further. Click on **Manage** in the CloudNGFW box.
 
 ![](https://lh5.googleusercontent.com/50qYInXqaHI6NlSDgDH_fhagrpWcvjSsn1gAxk73Hip_ybkgaJLxcmEsGknHaZ0lvvKG9pPEaT5H_haQ1v6yowAFqRmD7c_XP2DlyMH5ZOMXJeGk1HV8Yyy8o-G94Md5-7hUGneInUrFrXiHvLOF9Tg)
@@ -780,7 +780,7 @@ in that Lab part you will expand the existing VPCs to use a second Availability 
 
 ## Steps to do
 
-1. Create in the Attack, Vulnerable and Security VPC a new Subnet for the Workloads and the TGW
+1. Create in the Attack, Vulnerable and Security VPC a new Subnet in a different **Availability Zone (AZ B)** for the Workloads and the TGW
 2. Remove static route **'0.0.0.0/0'** pointing to the GWLB Endpoint in the **sec-vpc-tgw-rt**
 3. Delete in the CloudNGFW WebUI under NGFWs the previous created CloudNGFW Instance
    1. Deletion takes up to **~ 15 minutes**
@@ -898,6 +898,7 @@ Threat Log Vul App Server 2
 # STOP HERE FOR TODAY
 
 # Update Envrionment for Inbound Traffic
+In that Lab Part you will update your AWS Environment to support Inbound Access from the Internet to one **Vul-App** server.
 
 ## Design
 ![](https://raw.githubusercontent.com/torstenstern/ps-lab-aws-cloud-ngfw/main/pictures/Screenshot%202022-09-07%20at%2020.10.43.png)
@@ -905,7 +906,6 @@ Threat Log Vul App Server 2
 ## Steps to do
 
 1. Create new Inbound VPC and 4 Subnets (TGW and Application Load Balancer) two subnets in Availability Zone A and B
-
 2. Create new Internet Gateway and Attach it to the new Inbound VPC
 3. Create a route table **qwikLABS-inbound-vpc-rt**
 4. Create the following route tables.
@@ -915,6 +915,7 @@ Threat Log Vul App Server 2
 6. Update Transit Gateway Route Table for the Security VPC
 7. Create Application Load Balancer and configure it.
    1. Use as Target the Instances in the Vul-App-VPC
+8. Make sure all IGW are removed on the Spokes and Route Tables are updated.
 
 <br/>
 
