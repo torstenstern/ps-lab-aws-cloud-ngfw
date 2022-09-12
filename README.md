@@ -895,6 +895,8 @@ Threat Log Vul App Server 2
 
 <br/><br/>
 
+# STOP HERE FOR TODAY
+
 # Update Envrionment for Inbound Traffic
 
 ## Design
