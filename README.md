@@ -292,7 +292,7 @@ sudo docker exec vul-app-1 /bin/sh -c 'ping att-svr'
 <br/>
 
 ## Setup the Attacker App Server and launch the Log4J Attack
-Login to both the app-app and the att-app servers using the downloaded PEM or PPK file. Check the example below.
+Login to both the vul-app and the att-app servers using the downloaded PEM or PPK file. Check the example below.
 
 ```
 ssh -i <qwikLABS-xxxx-xxxx.pem> ec2-user@<public-ip-att-app-server>
