@@ -773,7 +773,7 @@ Congratulations, you have successfully completed the first Part of the Lab. As n
 
 # Update existing VPC's
 
-in that Lab part you will update the existing VPCs to use a second Availability Zone.
+in that Lab part you will expand the existing VPCs to use a second Availability Zone. For that you have to create in each VPC a second subnet in the **Availability Zone B**.
 
 ## Design
 ![](https://raw.githubusercontent.com/torstenstern/ps-lab-aws-cloud-ngfw/main/pictures/Screenshot%202022-09-07%20at%2017.50.42.png)
@@ -786,7 +786,7 @@ in that Lab part you will update the existing VPCs to use a second Availability 
    1. Deletion takes up to **~ 15 minutes**
 4. After deleting the old CloudNGFW create a new CloudNGFW instance and add both subnets of Security VPC **CloudNGFW WebUI**
    1. Wait until the Endpoint is created **(~ 15 minutes)**
-5. Create in the WebUI new Route Tables for the newly created Subnets
+5. Create in the AWS WebUI new Route Tables for the newly created Subnets
    1. Associate the Subnets
    2. Create a static route (0.0.0.0/0) to the related GWLB Endpoint (TGW subnet)
    3. Create a static route (0.0.0.0/0) to the related TGW Endpoint (security subnet)
@@ -910,7 +910,7 @@ Threat Log Vul App Server 2
    1. 0.0.0.0/0 -> Target Inbound IGW
    2. 10.0.0.0/8 - TGW ENI Inbound VPC
 5. Create Transit Gateway Attachment for the **qwikLABS-inbound-vpc** and add the subnets **qwikLABS-inbound-vpc-tgw-subnet-aza** and **qwikLABS-inbound-vpc-tgw-subnet-azb** to it
-6. Update Transit Gatewate Route Table for the Security VPC
+6. Update Transit Gateway Route Table for the Security VPC
 7. Create Application Load Balancer and configure it.
    1. Use as Target the Instances in the Vul-App-VPC
 
