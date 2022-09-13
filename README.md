@@ -950,10 +950,10 @@ For that you have to create a new Inbound VPC, ALB and, updateding your route ta
 
 <br/><br/>
 
-# Optional: Update the Environment for Outbound - WORK IN PROGRESS
+# Lab Part 4: OPTIONAL! Update the Environment for Outbound
 
 ## Overview
-Update the AWS Environment to support Outbound Traffic
+Update the AWS Environment to support Outbound Traffic.
 
 ## Steps to do
 
