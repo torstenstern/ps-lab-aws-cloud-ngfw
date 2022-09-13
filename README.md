@@ -696,7 +696,7 @@ In this session we will be creating firewall policies and experience how the bes
 
 <br/>
 
-## Play around with Security Profiles
+## Play around with Security Services
 
 115. On the CloudNGFW Console, navigate to _Rulestacks_ and click on ‘Rulestack1’
 
