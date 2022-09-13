@@ -15,8 +15,8 @@ vulnerable-vpc-route-tables = [
 vulnerable-vpc-subnets = [
   { name = "subnet", cidr = "10.1.1.0/24", az = "a" },
   { name = "tgw-subnet", cidr = "10.1.0.0/24", az = "a" },
-  { name = "subnet", cidr = "10.1.2.0/24", az = "b" },
-  { name = "tgw-subnet", cidr = "10.1.3.0/24", az = "b" }
+  { name = "subnet-azb", cidr = "10.1.2.0/24", az = "b" },
+  { name = "tgw-subnet-azb", cidr = "10.1.3.0/24", az = "b" }
 ]
 
 vulnerable-vpc-security-groups = [

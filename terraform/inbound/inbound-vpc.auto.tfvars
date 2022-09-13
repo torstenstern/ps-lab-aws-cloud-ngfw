@@ -67,6 +67,6 @@ inbound-vpc-security-groups = [
 inbound-vpc-subnets = [
   { name = "alb-subnet", cidr = "10.4.1.0/24", az = "a" },
   { name = "tgw-subnet", cidr = "10.4.0.0/24", az = "a" },
-  { name = "alb-subnet", cidr = "10.4.2.0/24", az = "b" },
-  { name = "tgw-subnet", cidr = "10.4.3.0/24", az = "b" }
+  { name = "alb-subnet-azb", cidr = "10.4.2.0/24", az = "b" },
+  { name = "tgw-subnet-azb", cidr = "10.4.3.0/24", az = "b" }
 ]

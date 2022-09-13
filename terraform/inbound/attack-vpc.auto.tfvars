@@ -67,8 +67,8 @@ attack-vpc-security-groups = [
 attack-vpc-subnets = [
   { name = "subnet", cidr = "10.2.1.0/24", az = "a" },
   { name = "tgw-subnet", cidr = "10.2.0.0/24", az = "a" },
-  { name = "subnet", cidr = "10.2.2.0/24", az = "b" },
-  { name = "tgw-subnet", cidr = "10.2.3.0/24", az = "b" }
+  { name = "subnet-azb", cidr = "10.2.2.0/24", az = "b" },
+  { name = "tgw-subnet-azb", cidr = "10.2.3.0/24", az = "b" }
 ]
 
 attack-vpc-instances = [
