@@ -704,7 +704,7 @@ In this session we will be creating firewall policies and experience how the bes
 
 116. Navigate to the ‘Security Services’ tab.
 
-![](https://raw.githubusercontent.com/torstenstern/ps-lab-aws-cloud-ngfw/main/pictures/securityservices.png)
+![](https://raw.githubusercontent.com/torstenstern/ps-lab-aws-cloud-ngfw/main/pictures/securityservices2.png)
 
 By default, IPS Vulnerability, Anti-Spyware, Antivirus and File Blocking features are enabled in the Security Profiles. This is what blocks the Log4J attack in the previous step. Just for the purpose of this activity, we can disable some of these profiles.
 
