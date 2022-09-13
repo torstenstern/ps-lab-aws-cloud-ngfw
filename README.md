@@ -771,9 +771,9 @@ Congratulations, you have successfully completed the first Part of the Lab. As n
 
 <br/><br/>
 
-# Update existing VPC's
+# Lab Part 2: Update existing VPC's
 
-in that Lab part you will expand the existing VPCs to use a second Availability Zone. For that you have to create in each VPC a second subnet in the **Availability Zone B**.
+In the Part 2 you will expand the existing VPCs to a second Availability Zone. For that you have to create in each VPC a second subnet in the **Availability Zone B**. You have also to create in the Vul-subnet and Att-Subnet and Attacker Server and Vulnareable Server to simulate East-West traffic. After that Lab part your AWS environment supports: **Multi AZ, East-West.** and everything is inspected via your CloudNGFW instance. You don't care about Outbound/Inbound Traffic for now.
 
 ## Design
 ![](https://raw.githubusercontent.com/torstenstern/ps-lab-aws-cloud-ngfw/main/pictures/Screenshot%202022-09-07%20at%2017.50.42.png)
@@ -903,10 +903,9 @@ Threat Log Vul App Server 2
 
 <br/><br/>
 
-# STOP HERE FOR TODAY
-
-# Update Envrionment for Inbound Traffic
-In that Lab Part you will update your AWS Environment to support Inbound Access from the Internet to one **Vul-App** server.
+# Lab Part 3: Update Envrionment for Inbound Traffic
+In that Lab Part you will update your AWS Environment to support Inbound Traffic from the Internet to the **Vul-App** server in your Vulnerable-VPC.
+For that you have to create a new Inbound VPC, ALB and, updateding your route tables (TGW and VPC) to redirect the traffic. After that Lab part your AWS environment supports: **Multi AZ, East-West and, Inbound Traffic** and everything is inspected via your CloudNGFW instance.
 
 ## Design
 ![](https://raw.githubusercontent.com/torstenstern/ps-lab-aws-cloud-ngfw/main/pictures/Screenshot%202022-09-07%20at%2020.10.43.png)
