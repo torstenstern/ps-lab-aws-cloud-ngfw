@@ -985,8 +985,11 @@ Update the AWS Environment to support Outbound Traffic.
 ## References
 
 [Blog Post](https://medium.com/palo-alto-networks-developer-blog/the-developers-guide-to-palo-alto-networks-cloud-ngfw-for-aws-b8c39c3b9228)
+
 [Terraform Provider](https://registry.terraform.io/providers/PaloAltoNetworks/cloudngfwaws/latest/docs)
+
 [Tech Docs](https://docs.paloaltonetworks.com/cloud-ngfw/aws/cloud-ngfw-on-aws/getting-started-with-cloud-ngfw-for-aws/cloud-ngfw-for-aws-terraform-provider)
+
 [API Docs](https://pan.dev/cloudngfw/aws/api/)
 
 
@@ -1001,6 +1004,10 @@ To use the Terraform provider, you must first enable the Programmatic Access for
 You will authenticate against your Cloud NGFW by assuming roles in your AWS account that are allowed to make API calls to the AWS API Gateway service. The associated tags with the roles dictate the type of Cloud NGFW programmatic access granted — Firewall Admin, RuleStack Admin, or Global Rulestack Admin.
 
 There is some terraform code prepared that will deploy this IAM role for you in the QwikLabs account. You will need to modify some of the values in the code.
+
+The code for this is in a different repository.
+
+- git clone https://github.com/torstenstern/ps-lab-aws-cloud-ngfw.git
 
 ```
 cd ~/ps-lab-aws-cloud-ngfw
