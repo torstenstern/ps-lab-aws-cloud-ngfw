@@ -980,7 +980,7 @@ Update the AWS Environment to support Outbound Traffic.
 <br/><br/>
 
 
-# API Access to Cloud NGFW
+# Lab Part 5: API Access to Cloud NGFW
 
 ## References
 
