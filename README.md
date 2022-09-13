@@ -702,21 +702,21 @@ In this session we will be creating firewall policies and experience how the bes
 
 ![](https://lh5.googleusercontent.com/VyhB6hAv8QO2H2bGa5jpDwY5LRyBo5A92qOSWCp0YGlnfTUaNaawJ8ty8fRA5uZh4AtH9tiul6S8HFASqjyj5I70RcsULOeqAXTtbaXEx1xXD3mI8d3jOHB6sZfPw3UggaC1B15aX4AImgG5yMr4naM)
 
-116. Navigate to the ‘Security Profiles’ tab.
+116. Navigate to the ‘Security Services’ tab.
 
-![](https://lh4.googleusercontent.com/8ekWbvx50uSvtmAmq9qO6tRzw9xxosIDVPNvv0OttCYdsFNFafudjkC3Aos6DwTXxhHhpJwj2kPxJVUG7yqYzg1zfNqNOtdaKYSivHfydKt4INktcqodf8kkM40GrDAgaajaEFjDa9HYdHGpOqzUdCk)
+![](https://raw.githubusercontent.com/torstenstern/ps-lab-aws-cloud-ngfw/main/pictures/securityservices.png)
 
 By default, IPS Vulnerability, Anti-Spyware, Antivirus and File Blocking features are enabled in the Security Profiles. This is what blocks the Log4J attack in the previous step. Just for the purpose of this activity, we can disable some of these profiles.
 
-117. Disable IPS Vulnerability, Anti-Spyware, Antivirus and File Blocking.
+1.   Disable IPS Vulnerability, Anti-Spyware, Antivirus and File Blocking.
 
 ![](https://lh6.googleusercontent.com/sfPF-dY13L4PCGcGsRZKet7g0596YboPv0yh-SYWzrVqfYTKuorC8ZRRLH882h9qbwHOye4TboGsRVQh9g-egzNVMXr_ga3ZndZwxiYkOnkzVPw4JrwFCmEA3_IEECfbvnEoQz9VUnJ9JLtHm_fkmGU)
 
-118. From the ‘CONFIG ACTIONS’ dropdown list at the top-right side of the page, select ‘_Deploy Configuration_’.
+1.   From the ‘CONFIG ACTIONS’ dropdown list at the top-right side of the page, select ‘_Deploy Configuration_’.
 
 ![](https://lh4.googleusercontent.com/UqMcelwDqPiw9Z78GTOjAZMq2jjM4gWP1Tn6ydbHsV54ckD4tNJyPPe8Mb-moWsfTbuT1IcI1xi5pSUAsS7HE7mFWNlaCOKCluCgNEppmzX5s9Egdpq8Ez8qtjIGKc2_mbxOHFjWvVZBh-4jq9vONJw)
 
-119. Commit status will change to ‘Pending’ and then ‘Success’
+1.   Commit status will change to ‘Pending’ and then ‘Success’
 
 ![](https://lh4.googleusercontent.com/5YFVro3b1fjIyK3flyHQuXZh8kpejcm4mqJhIUGxxJh1P-V1polTJz_XXa2gQQWo7goiojx3xATq7jiXWDfAOL7ZY1GpY8B34Q65oXIWgxAXnQa-IqnEf_kiEwdOPYPo9sFbZwII8TC-g5_tHRqUCAs)
 
@@ -724,17 +724,17 @@ By default, IPS Vulnerability, Anti-Spyware, Antivirus and File Blocking feature
 
 ## Relaunch Attack
 
-120. Navigate to att-app-server SSH session and launch the attack again.
+1.   Navigate to att-app-server SSH session and launch the attack again.
 
 ```
 /tmp/launch_attack.sh
 ```
 
-121. You will get a “Hello, world!” message as a response indicating that the attack is successful.
+1.   You will get a “Hello, world!” message as a response indicating that the attack is successful.
 
 ![](https://lh5.googleusercontent.com/nFEEIa02sRhicmJFOl_pk-XQ3ZAI8AzJDKNVgFWCU7sMOnQcDRF9iv8UP5fPxPZVhehwRlZqUfcsBQDhXKIwQanRux1HluF9jky3NdkPQNpuyiUs8es5TLTNJYO1iqQNoNig_xjz6-WPhiHH_LtJhA)
 
-122. Switch context to the **vul-app-server** SSH session and use the following commands to connect to the **vul-app-1 **container and view the /tmp directory. You will see that the vul-app server has been infected with malware.
+1.   Switch context to the **vul-app-server** SSH session and use the following commands to connect to the **vul-app-1 **container and view the /tmp directory. You will see that the vul-app server has been infected with malware.
 
 ```
 sudo docker exec -it vul-app-1 /bin/sh
@@ -746,12 +746,12 @@ ls -alrt /tmp
 
 ![](https://lh5.googleusercontent.com/wDXixyTsMKEro1mx9hXN4snqToRVgFDSRDY5Vqj8r1LJvgKb4oxJqUEwhv1yfCqQRp7I2918YGw4wgYlMKVU3VKcYNsqivFmw6n_GOO6kw36n0G6f0jroR9vfO1aUVzdmChvKev_lbyuHodgi8oInzQ)
 
-123. Verify the attack by checking the logs on CloudWatch. Navigate to the AWS Console browser tab, on the Search bar at the top of the page, type “cloudwatch” and select “CloudWatch” from the search results.
-124. From the left menu, click on “Log groups” and from the list of Log groups, select “PaloAltoCloudNGFW”.
+1.   Verify the attack by checking the logs on CloudWatch. Navigate to the AWS Console browser tab, on the Search bar at the top of the page, type “cloudwatch” and select “CloudWatch” from the search results.
+2.   From the left menu, click on “Log groups” and from the list of Log groups, select “PaloAltoCloudNGFW”.
 
 ![](https://lh4.googleusercontent.com/NhHMFHA560c1XFo2XBLLESiqa16YBqh51v0F6AjvDApCP19vXeiIrR5UMtTm3G692Ox30bOCyj7yFeAdnxyRl-BRIlUi4FFXnSTsYOimRgX0wNkk-y-1WFCOb3Lm3Et59lJ8RYE1urcoYbG7lzfFM5w)
 
-125. Open the TRAFFIC log file and you would see the sequence of a successful Log4J attack. Sessions on port 8080, 1389 and 8888.
+1.   Open the TRAFFIC log file and you would see the sequence of a successful Log4J attack. Sessions on port 8080, 1389 and 8888.
 
 ![](https://lh5.googleusercontent.com/8hMPemMAJcDB2L1iBgOJw3zytcA4Hd9wBN9rK9vipv43xhy9L9c_ozIezHEonGVfa6g5KvNBkO1_WeDwX-GOJp_-RfjZjBCox75n2cWFtggQ_QFwswsDddk7qtvfKgutIzRNmoWRdPrjVSen-5ujoLA)
 
