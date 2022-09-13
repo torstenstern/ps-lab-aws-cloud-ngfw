@@ -1,0 +1,58 @@
+{
+    "resource": {
+        "cloudngfwaws_prefix_list": {
+            "VPC-SOURCES": {
+                "name": "VPC-SOURCE-SUMMARIES",
+                "prefix_list": [
+                    "10.0.0.0/16",
+                    "10.2.0.0/16",
+                    "10.3.0.0/16",
+                    "10.4.0.0/16"
+                ],
+                "description": "\n'WooHaa",
+                "rulestack": "${cloudngfwaws_rulestack.example.name}",
+                "audit_comment": ""
+            },
+            "MORE-SOURCES": {
+                "name": "LinuxSHe",
+                "prefix_list": [
+                    "192.168.100.100/32",
+                    "192.168.100.101/32"
+                ],
+                "description": "Auto-created from IP Range address object",
+                "rulestack": "${cloudngfwaws_rulestack.example.name}",
+                "audit_comment": ""
+            }
+        },
+        "cloudngfwaws_security_rule": {
+            "outbound-permit": {
+                "name": "outbound-permit",
+                "rule_list": "LocalRule",
+                "scope": "Local",
+                "priority": 100,
+                "source": {
+                    "prefix_lists": [
+                        "${cloudngfwaws_prefix_list.VPC-SOURCES.name}",
+                        "${cloudngfwaws_prefix_list.MORE-SOURCES.name}"
+                    ]
+                },
+                "destination": {},
+                "protocol": "any",
+                "applications": ["any"],
+                "category": {},
+                "action": "Allow",
+                "logging": true,
+                "rulestack": "${cloudngfwaws_rulestack.example.name}",
+                "enabled": true,
+                "tags": {
+                    "panos_7": "Outbound_rule",
+                    "panos_src_zones": "OUTSIDE-ZONE",
+                    "panos_dst_zones": "any"
+                },
+                "negate_source": false,
+                "negate_destination": false,
+                "description": "why are you allowing everything?!"
+            }
+        }
+    }
+}
