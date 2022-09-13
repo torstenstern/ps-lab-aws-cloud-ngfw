@@ -43,23 +43,3 @@ resource "cloudngfwaws_prefix_list" "vuln-vpc" {
   ]
   audit_comment = "initial config"
 }
-
-resource "cloudngfwaws_security_rule" "example" {
-  rulestack   = cloudngfwaws_rulestack.example.name
-  rule_list   = "LocalRule"
-  priority    = 3
-  name        = "tf-security-rule"
-  description = "Also configured by Terraform"
-  source {
-        prefix_lists = [cloudngfwaws_prefix_list.attack-vpc.name]
-  }
-  destination {
-    prefix_lists = [cloudngfwaws_prefix_list.vuln-vpc.name]
-  }
-  negate_destination = false
-  applications       = ["any"]
-  category {}
-  action        = "Allow"
-  logging       = true
-  audit_comment = "initial config"
-}

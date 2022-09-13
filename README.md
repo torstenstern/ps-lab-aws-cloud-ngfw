@@ -969,6 +969,120 @@ Update the AWS Environment to support Outbound Traffic
 
 <br/><br/>
 
+
+# API Access to Cloud NGFW
+
+## References
+
+[Blog Post](https://medium.com/palo-alto-networks-developer-blog/the-developers-guide-to-palo-alto-networks-cloud-ngfw-for-aws-b8c39c3b9228)
+[Terraform Provider](https://registry.terraform.io/providers/PaloAltoNetworks/cloudngfwaws/latest/docs)
+[Tech Docs](https://docs.paloaltonetworks.com/cloud-ngfw/aws/cloud-ngfw-on-aws/getting-started-with-cloud-ngfw-for-aws/cloud-ngfw-for-aws-terraform-provider)
+[API Docs](https://pan.dev/cloudngfw/aws/api/)
+
+
+## Enable Programmatic Access
+
+To use the Terraform provider, you must first enable the Programmatic Access for your Cloud NGFW tenant. You can check this by navigating to the Settings section of the Cloud NGFW console. The steps to do this can be found here.
+
+![alt](https://miro.medium.com/max/875/0*FSbjFPptO8YenW6f)
+
+## Create IAM Role
+
+You will authenticate against your Cloud NGFW by assuming roles in your AWS account that are allowed to make API calls to the AWS API Gateway service. The associated tags with the roles dictate the type of Cloud NGFW programmatic access granted — Firewall Admin, RuleStack Admin, or Global Rulestack Admin.
+
+There is some terraform code prepared that will deploy this IAM role for you in the QwikLabs account. You will need to modify some of the values in the code.
+
+```
+cd ~/ps-lab-aws-cloud-ngfw
+```
+- `git pull` to retrieve the latest updates
+
+```
+cd ~/ps-lab-aws-cloud-ngfw/automation-lab/iam
+```
+
+- Get the ARN of the user that is authenticated in cloudshell
+
+```
+aws sts get-caller-identity
+```
+
+- Edit the iam.tf file to update the ARN on line 55
+- terraform init
+- terraform apply
+
+In the AWS Console, Inspect the IAM role permissions and the trust relationships to understand what is being allowed. Copy the ARN of the IAM role as you will need it for the next step.
+
+One important element is the Tags on the IAM Policy. These are used to map what CloudNGFW permissions this IAM role has access to.
+
+## Create Cloud NGFW configurations with Terraform
+
+```
+cd ~/ps-lab-aws-cloud-ngfw/automation-lab/cloudngfw
+```
+
+- Edit the main.tf and add the ARN of your IAM role on line 14 under lra_arn
+
+```
+lrn_arn = "arn:aws:iam::5271******:role/CloudNGFWRole"
+```
+
+- terraform init and terraform apply
+
+
+
+- Add your QwikLabs AWS account ID role on line 20 for `account_id`
+
+```
+resource "cloudngfwaws_rulestack" "example" {
+  name        = "terraform-rulestack"
+  scope       = "Local"
+  account_id  = "527167305681" ## Replace with your Qwiklabs account ID
+  description = "Made by Terraform"
+  profile_config {
+    anti_spyware = "BestPractice"
+  }
+}
+```
+
+## Create your own rule using the address groups
+
+- Reference the [Terraform Provider documentation](https://registry.terraform.io/providers/PaloAltoNetworks/cloudngfwaws/latest/docs/resources/security_rule) for creating a `cloudngfwaws_security_rule`
+
+- Edit main.tf and add a new resource to allow traffic from the attack-vpc to the vuln-vpc
+- Your security rule resource should reference the prefix lists using the terraform resources
+
+Hint for source and destination syntax
+```
+  source {
+        prefix_lists = [cloudngfwaws_prefix_list.attack-vpc.name]
+  }
+  destination {
+    prefix_lists = [cloudngfwaws_prefix_list.vuln-vpc.name]
+  }
+```
+
+After you have added the resource run terraform apply and validate it is created successfully
+
+
+## Create security policies with JSON
+
+Terraform can also parse JSON directly. This will be especially useful for automated deployment pipelines for creating security policies. You can specify the schema that is required for the security policies and then have no need to right out resources in terraform HCL format.
+
+There is an example json file in this format that you can apply.
+
+- cd ~/ps-lab-aws-cloud-ngfw/automation-lab/cloudngfw
+- Rename the file so that it will be parsed by terraform during the next apply
+
+```
+mv cloudngfw-policies.tf.json.no cloudngfw-policies.tf.json
+```
+- Inspect the json file to see the formatting
+
+- Terraform apply
+
+
+
 # Congratulations!!!
 
 Congratulations,  you have successfully completed this Hands ON lab. As part of this lab you went through the process to SUBSCRIBE to Palo Alto CloudNGFW Service on AWS. You familiarize yourself with ways to DEPLOY the service to protect your application on AWS. And finally, you learned how to SECURE your environment with ‘Best Practices’ security profiles from Palo Alto Networks.
