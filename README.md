@@ -814,7 +814,6 @@ As next run the following commands
 
 Once the installation is completed run the following commands to run docker and install the application
 
-- ```sudo systemctl start docker```
 - ```sudo docker container run -itd --rm --name vul-app-1 -p 8080:8080 us.gcr.io/panw-gcp-team-testing/qwiklab/pcc-log4shell/l4s-demo-app:1.0```
 - ```sudo docker container list -a```
 
