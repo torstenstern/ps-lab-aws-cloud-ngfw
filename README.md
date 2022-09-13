@@ -907,13 +907,15 @@ In that Lab Part you will update your AWS Environment to support Inbound Access 
 1. Create new Inbound VPC and 4 Subnets (TGW and Application Load Balancer) two subnets in Availability Zone A and B
 2. Create new Internet Gateway and Attach it to the new Inbound VPC
 3. Create a route table **qwikLABS-inbound-vpc-rt**
-4. Create the following route tables.
+4. Create Transit Gateway Attachment for the **qwikLABS-inbound-vpc** and add the subnets **qwikLABS-inbound-vpc-tgw-subnet-aza** and **qwikLABS-inbound-vpc-tgw-subnet-azb** to it.
+5. Create the following route tables.
    1. 0.0.0.0/0 -> Target Inbound IGW
    2. 10.0.0.0/8 - TGW ENI Inbound VPC
-5. Create Transit Gateway Attachment for the **qwikLABS-inbound-vpc** and add the subnets **qwikLABS-inbound-vpc-tgw-subnet-aza** and **qwikLABS-inbound-vpc-tgw-subnet-azb** to it
 6. Update Transit Gateway Route Table for the Security VPC
 7. Create Application Load Balancer and configure it.
    1. Use as Target the Instances in the Vul-App-VPC
+   2. Configure the Traget Group with TCP 80
+   3. Deploy on the Vul-App-Servers an Apache Weberver
 8. Make sure all IGW are removed on the Spokes and Route Tables are updated.
 
 <br/>
