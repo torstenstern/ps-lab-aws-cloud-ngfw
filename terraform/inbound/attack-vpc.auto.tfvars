@@ -13,6 +13,14 @@ attack-vpc-route-tables = [
 ]
 
 attack-vpc-routes = {
+  #   att-vpc-igw = {
+  #   name          = "att-vpc-igw"
+  #   vpc_name      = "att-vpc"
+  #   route_table   = "rt"
+  #   prefix        = "0.0.0.0/0"
+  #   next_hop_type = "internet_gateway"
+  #   next_hop_name = "att-vpc"
+  # },
   att-vpc-tgw = {
     name          = "att-vpc-tgw"
     vpc_name      = "att-vpc"
@@ -20,14 +28,6 @@ attack-vpc-routes = {
     prefix        = "10.1.0.0/16"
     next_hop_type = "transit_gateway"
     next_hop_name = "tgw"
-  },
-  att-vpc-igw = {
-    name          = "att-vpc-igw"
-    vpc_name      = "att-vpc"
-    route_table   = "rt"
-    prefix        = "0.0.0.0/0"
-    next_hop_type = "internet_gateway"
-    next_hop_name = "att-vpc"
   }
 }
 

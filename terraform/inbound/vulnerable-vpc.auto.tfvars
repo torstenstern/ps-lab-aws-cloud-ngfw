@@ -63,14 +63,14 @@ vulnerable-vpc-instances = [
 ]
 
 vulnerable-vpc-routes = {
-  vul-vpc-igw = {
-    name          = "vul-vpc-igw"
-    vpc_name      = "vul-vpc"
-    route_table   = "rt"
-    prefix        = "0.0.0.0/0"
-    next_hop_type = "internet_gateway"
-    next_hop_name = "vul-vpc"
-  },
+  # vul-vpc-igw = {
+  #   name          = "vul-vpc-igw"
+  #   vpc_name      = "vul-vpc"
+  #   route_table   = "rt"
+  #   prefix        = "0.0.0.0/0"
+  #   next_hop_type = "internet_gateway"
+  #   next_hop_name = "vul-vpc"
+  # },
   vul-vpc-tgw = {
     name          = "vul-vpc-tgw"
     vpc_name      = "vul-vpc"
