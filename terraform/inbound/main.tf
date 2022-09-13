@@ -44,7 +44,8 @@ locals {
   vpcs = {
     "${module.vulnerable-vpc.vpc_details.name}"  : module.vulnerable-vpc.vpc_details,
     "${module.attack-vpc.vpc_details.name}"      : module.attack-vpc.vpc_details,
-    "${module.security-vpc.vpc_details.name}"    : module.security-vpc.vpc_details
+    "${module.security-vpc.vpc_details.name}"    : module.security-vpc.vpc_details,
+    "${module.inbound-vpc.vpc_details.name}"    : module.inbound-vpc.vpc_details
   }
 }
 
