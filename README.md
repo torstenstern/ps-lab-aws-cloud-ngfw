@@ -781,7 +781,16 @@ in that Lab part you will expand the existing VPCs to use a second Availability 
 ## Steps to do
 
 1. Create in the Attack, Vulnerable and Security VPC a new Subnet in a different **Availability Zone (AZ B)** for the Workloads and the TGW
-2. Remove static route **'0.0.0.0/0'** pointing to the GWLB Endpoint in the **sec-vpc-tgw-rt**
+2. Remove the static route **'0.0.0.0/0'** pointing to the GWLB Endpoint in the **qwikLABS-sec-vpc-tgw-rt**
+<details>
+  <summary style="color:black">Expand For Details</summary>
+
+  VPC -> Route tables
+  ![](https://raw.githubusercontent.com/torstenstern/ps-lab-aws-cloud-ngfw/main/pictures/routetablepart3.png)
+
+</details>
+<br/>
+
 3. Delete in the CloudNGFW WebUI under NGFWs the previous created CloudNGFW Instance
    1. Deletion takes up to **~ 15 minutes**
 4. After deleting the old CloudNGFW create a new CloudNGFW instance and add both subnets of Security VPC **CloudNGFW WebUI**
