@@ -9,7 +9,8 @@ inbound-vpc = {
 }
 
 inbound-vpc-route-tables = [
-  { name = "rt", "subnet" = "subnet" }
+  { name = "rt", "subnet" = "subnet" },
+  { name = "rt2", "subnet" = "subnet-azb" }
 ]
 
 inbound-vpc-routes = {

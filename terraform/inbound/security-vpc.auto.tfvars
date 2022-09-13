@@ -10,7 +10,8 @@ security-vpc = {
 
 security-vpc-route-tables = [
   { name = "cngfw-rt", "subnet" = "subnet" },
-  { name = "tgw-rt", "subnet" = "tgw-subnet" }
+  { name = "tgw-rt", "subnet" = "tgw-subnet" },
+  { name = "nat-gw", "subnet" = "nat-subnet" }
 ]
 
 security-vpc-routes = {
@@ -25,11 +26,11 @@ security-vpc-routes = {
 }
 
 security-vpc-subnets = [
-  { name = "subnet-aza", cidr = "10.3.1.0/24", az = "a" },
-  { name = "tgw-subnet-aza", cidr = "10.3.0.0/24", az = "a" },
+  { name = "subnet", cidr = "10.3.1.0/24", az = "a" },
+  { name = "tgw-subnet", cidr = "10.3.0.0/24", az = "a" },
   { name = "subnet-azb", cidr = "10.3.2.0/24", az = "b" },
   { name = "tgw-subnet-azb", cidr = "10.3.3.0/24", az = "b" },
-  { name = "nat-subnet-aza", cidr = "10.3.4.0/24", az = "a" },
+  { name = "nat-subnet", cidr = "10.3.4.0/24", az = "a" },
   { name = "nat-subnet-azb", cidr = "10.3.5.0/24", az = "b" }
 ]
 

@@ -9,7 +9,8 @@ vulnerable-vpc = {
 }
 
 vulnerable-vpc-route-tables = [
-  { name = "rt", "subnet" = "subnet" }
+  { name = "rt", "subnet" = "subnet" },
+  { name = "rt2", "subnet" = "subnet-azb" }
 ]
 
 vulnerable-vpc-subnets = [
