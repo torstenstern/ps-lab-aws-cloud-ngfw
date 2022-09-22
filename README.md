@@ -985,14 +985,17 @@ Update the AWS Environment to support Outbound Traffic.
 ## References
 
 [Blog Post](https://medium.com/palo-alto-networks-developer-blog/the-developers-guide-to-palo-alto-networks-cloud-ngfw-for-aws-b8c39c3b9228)
+
 [Terraform Provider](https://registry.terraform.io/providers/PaloAltoNetworks/cloudngfwaws/latest/docs)
+
 [Tech Docs](https://docs.paloaltonetworks.com/cloud-ngfw/aws/cloud-ngfw-on-aws/getting-started-with-cloud-ngfw-for-aws/cloud-ngfw-for-aws-terraform-provider)
+
 [API Docs](https://pan.dev/cloudngfw/aws/api/)
 
 
 ## Enable Programmatic Access
 
-To use the Terraform provider, you must first enable the Programmatic Access for your Cloud NGFW tenant. You can check this by navigating to the Settings section of the Cloud NGFW console. The steps to do this can be found here.
+To use the Terraform provider, you must first enable the Programmatic Access for your Cloud NGFW tenant. You can check this by navigating to the Settings section of the Cloud NGFW console. The steps to do this can be found [here](https://pan.dev/cloudngfw/aws/api/).
 
 ![alt](https://miro.medium.com/max/875/0*FSbjFPptO8YenW6f)
 
@@ -1002,10 +1005,13 @@ You will authenticate against your Cloud NGFW by assuming roles in your AWS acco
 
 There is some terraform code prepared that will deploy this IAM role for you in the QwikLabs account. You will need to modify some of the values in the code.
 
+The code for this is in a different repository.
+
+- git clone https://github.com/torstenstern/ps-lab-aws-cloud-ngfw.git
+
 ```
 cd ~/ps-lab-aws-cloud-ngfw
 ```
-- `git pull` to retrieve the latest updates
 
 ```
 cd ~/ps-lab-aws-cloud-ngfw/automation-lab/iam
@@ -1037,10 +1043,6 @@ cd ~/ps-lab-aws-cloud-ngfw/automation-lab/cloudngfw
 lrn_arn = "arn:aws:iam::5271******:role/CloudNGFWRole"
 ```
 
-- terraform init and terraform apply
-
-
-
 - Add your QwikLabs AWS account ID role on line 20 for `account_id`
 
 ```
@@ -1054,6 +1056,8 @@ resource "cloudngfwaws_rulestack" "example" {
   }
 }
 ```
+
+- terraform init and apply and verify your resources were created
 
 ## Create your own rule using the address groups
 
@@ -1077,7 +1081,7 @@ After you have added the resource run terraform apply and validate it is created
 
 ## Create security policies with JSON
 
-Terraform can also parse JSON directly. This will be especially useful for automated deployment pipelines for creating security policies. You can specify the schema that is required for the security policies and then have no need to right out resources in terraform HCL format.
+Terraform can also parse JSON directly. This will be especially useful for automated deployment pipelines for creating security policies. You can specify the schema that is required for the security policies and then have no need to write out resources in terraform HCL format.
 
 There is an example json file in this format that you can apply.
 
